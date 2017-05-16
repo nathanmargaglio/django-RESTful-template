@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-from reala_api.models import Parcel, Owner, Event
-from reala_api.serializers import UserSerializer, GroupSerializer, ParcelSerializer, OwnerSerializer, EventSerializer, \
+from main_api.models import Parcel, Owner, Event
+from main_api.serializers import UserSerializer, GroupSerializer, ParcelSerializer, OwnerSerializer, EventSerializer, \
     LeadSerializer
 from django.shortcuts import render
 from django.shortcuts import render_to_response, redirect, render

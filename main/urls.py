@@ -1,7 +1,7 @@
 from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework import routers
-from reala_api import views
+from main_api import views
 from django.views.decorators.csrf import csrf_exempt
 
 router = routers.DefaultRouter()

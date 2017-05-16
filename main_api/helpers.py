@@ -2,11 +2,11 @@ import requests, os
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 
 try:
-    from reala.config import *
+    from main.config import *
 except:
     GEOLOC_KEY = os.environ['GEOLOC_KEY']
 
-from reala_api.models import Parcel, Owner, Event
+from main_api.models import Parcel, Owner, Event
 from django.utils import timezone
 
 
@@ -14,7 +14,7 @@ def get_parcel_geocode(formatted_address):
     """
     This uses Google's Geolocation API to validate address data.
     The 'GEOLOC_KEY' needs to be either ecplcitly given here or defined
-    in reala/config.py as 'GEOLOC_KEY'
+    in main/config.py as 'GEOLOC_KEY'
 
     :param formatted_address:  str address
     :return: a Parcel object

@@ -9,7 +9,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('reala_api', '0003_auto_20170403_1446'),
+        ('main_api', '0003_auto_20170403_1446'),
     ]
 
     operations = [
@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='event',
             name='parcel',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='reala_api.Parcel'),
+            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='main_api.Parcel'),
         ),
         migrations.AlterField(
             model_name='event',
@@ -56,7 +56,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='owner',
             name='home',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='reala_api.Parcel'),
+            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='main_api.Parcel'),
         ),
         migrations.AlterField(
             model_name='owner',

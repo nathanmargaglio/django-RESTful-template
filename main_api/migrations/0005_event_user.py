@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('reala_api', '0004_auto_20170403_1449'),
+        ('main_api', '0004_auto_20170403_1449'),
     ]
 
     operations = [

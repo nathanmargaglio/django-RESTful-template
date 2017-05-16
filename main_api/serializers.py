@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from reala_api.models import Parcel, Owner, Event
-from reala_api.helpers import search_parcel, get_user_created_event
+from main_api.models import Parcel, Owner, Event
+from main_api.helpers import search_parcel, get_user_created_event
 from django.utils import timezone
 
 

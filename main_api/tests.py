@@ -1,7 +1,7 @@
 from django.test import TestCase
-from reala_api.models import Parcel, Owner, Event
+from main_api.models import Parcel, Owner, Event
 from django.contrib.auth.models import User, Group
-from reala_api.helpers import get_parcel_geocode, search_parcel, get_user_created_event
+from main_api.helpers import get_parcel_geocode, search_parcel, get_user_created_event
 
 
 # Create your tests here.

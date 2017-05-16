@@ -15,12 +15,9 @@ import os
 # import dj_database_url
 
 try:
-    from reala.config import *
+    from main.config import *
 except:
-    DATABASE_NAME = os.environ['DATABASE_NAME']
-    DATABASE_USER = os.environ['DATABASE_USER']
-    DATABASE_HOST = os.environ['DATABASE_HOST']
-    DATABASE_PASSWORD = os.environ['DATABASE_PASSWORD']
+    DATABASE_URL = os.environ['DATABASE_URL']
     SECRET_KEY = os.environ['SECRET_KEY']
     print("No config file found.  Using environmental variables.")
 
@@ -28,13 +25,6 @@ except:
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY # In config
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -54,12 +44,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_auth',
 
-    # 'allauth',
-    # 'allauth.account',
-    # 'allauth.socialaccount',
-    # 'allauth.socialaccount.providers.google',
-
-    'reala_api',
+    'main_api',
     'oauth2_provider',
     'corsheaders',
 ]
@@ -88,7 +73,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
-ROOT_URLCONF = 'reala.urls'
+ROOT_URLCONF = 'main.urls'
 SITE_ID = 2
 
 TEMPLATES = [
@@ -107,7 +92,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'reala.wsgi.application'
+WSGI_APPLICATION = 'main.wsgi.application'
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 CSRF_USE_SESSIONS = True
@@ -186,7 +171,7 @@ USE_TZ = True
 # If using a Heroku setup, these are the default DB settings
 # db_from_env = dj_database_url.config(conn_max_age=500)
 # DATABASES['default'].update(db_from_env)
-# DATABASES['default']['OPTIONS'] = {'ssl': {'ca': 'reala/rds-combined-ca-bundle.pem'}}
+# DATABASES['default']['OPTIONS'] = {'ssl': {'ca': 'main/rds-combined-ca-bundle.pem'}}
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

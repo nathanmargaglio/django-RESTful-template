@@ -4,4 +4,4 @@ from django.apps import AppConfig
 
 
 class RealaApiConfig(AppConfig):
-    name = 'reala_api'
+    name = 'main_api'

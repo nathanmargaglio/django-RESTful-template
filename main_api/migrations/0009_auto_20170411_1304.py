@@ -8,7 +8,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('reala_api', '0008_parcel_formatted_address'),
+        ('main_api', '0008_parcel_formatted_address'),
     ]
 
     operations = [
