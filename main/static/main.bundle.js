@@ -321,6 +321,7 @@ var LoginService = (function () {
         this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]({
             'Content-Type': 'application/x-www-form-urlencoded'
         });
+        this.client_id = $("meta[name=client_id]").attr("content");
         var url = window.location.href;
         if (url[url.length - 6] == ':') {
             url = "http://localhost:8000/";
@@ -332,15 +333,16 @@ var LoginService = (function () {
             username: username,
             password: password,
             grant_type: 'password',
-            client_id: 'ZvKaxqhmyG4HopZGo14YKlC9SXj8zW852GJyQmRY'
+            client_id: this.client_id
         };
+        console.log(this.client_id);
         return this.http.post(this.url + 'o/token/', JSON.stringify(data), { headers: this.headers });
     };
     LoginService.prototype.refresh = function (token) {
         var data = {
             refresh_token: token,
             grant_type: 'refresh_token',
-            client_id: 'ZvKaxqhmyG4HopZGo14YKlC9SXj8zW852GJyQmRY'
+            client_id: this.client_id
         };
         this.headers.set('Content-Type', 'application/json');
         return this.http.post(this.url + 'o/token/', JSON.stringify(data), { headers: this.headers });
@@ -348,7 +350,7 @@ var LoginService = (function () {
     LoginService.prototype.logout = function (token) {
         var data = {
             token: token,
-            client_id: 'ZvKaxqhmyG4HopZGo14YKlC9SXj8zW852GJyQmRY'
+            client_id: this.client_id //'ZvKaxqhmyG4HopZGo14YKlC9SXj8zW852GJyQmRY'
         };
         this.headers.set('Content-Type', 'application/json');
         return this.http.post(this.url + 'o/revoke_token/', JSON.stringify(data), { headers: this.headers });
@@ -598,11 +600,12 @@ var Lead = (function () {
          Event Stuff vvv
          */
         this.icon_urls = [
-            'http://icons.iconarchive.com/icons/jeanette-foshee/simpsons-03/32/Townspeople-Hans-Moleman-icon.png',
-            'http://icons.iconarchive.com/icons/jeanette-foshee/simpsons-05/32/Homertopia-Cool-Homer-icon.png',
-            'http://icons.iconarchive.com/icons/jeanette-foshee/simpsons-04/32/Guest-Stars-Spinal-Tap-Rock-star-Bart-icon.png',
-            'http://icons.iconarchive.com/icons/jeanette-foshee/simpsons-06/32/Homertopia-Homers-Woohoo-icon.png',
-            'http://icons.iconarchive.com/icons/jeanette-foshee/simpsons-08/32/Marge-O-Rama-Marge-in-curlers-icon.png',
+            'https://buffalofirstrealty.com/wp-content/uploads/2015/08/Kenny.jpg',
+            'https://buffalofirstrealty.com/wp-content/uploads/2014/10/Ray23-copy.jpg',
+            'https://buffalofirstrealty.com/wp-content/uploads/2016/01/Mary-Jane2.jpg',
+            'https://buffalofirstrealty.com/wp-content/uploads/2015/11/Ryan-Burke2.jpg',
+            'https://buffalofirstrealty.com/wp-content/uploads/2016/02/Sam-Smith-REDO2.jpg',
+            'https://buffalofirstrealty.com/wp-content/uploads/2015/08/Lauren.jpg',
         ];
     }
     Lead.prototype.getLead = function () {
